@@ -1,0 +1,21 @@
+   name: Contribution Bot
+
+   on:
+     schedule:
+       - cron: "30 5 * * *"
+     workflow_dispatch:
+
+   jobs:
+     bot:
+       runs-on: ubuntu-latest
+       steps:
+         - uses: actions/checkout@v4
+         - uses: actions/setup-python@v5
+         with:
+           python-version: "3.11"
+         - name: Install PyGithub
+           run: pip install PyGithub
+         - name: Run Bot
+           env:
+             GH_TOKEN: ${{ secrets.GH_TOKEN }}
+           run: python bot.py
