@@ -1,3 +1,2 @@
 # contribution-botA
 A
-A
