@@ -1,1 +1,1 @@
-# contribution-botA
+# contribution-bot
